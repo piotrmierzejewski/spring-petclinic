@@ -9529,4 +9529,71 @@ strong {
     margin-top: 10px;
     margin-bottom: 30px; } }
 
+[data-bs-theme="dark"] {
+  --bs-body-bg: #1c1a18;
+  --bs-body-bg-rgb: 28, 26, 24;
+  --bs-body-color: #f1f1f1;
+  --bs-body-color-rgb: 241, 241, 241;
+  --bs-emphasis-color: #fff;
+  --bs-emphasis-color-rgb: 255, 255, 255;
+  --bs-secondary-color: #a9adaf;
+  --bs-secondary-bg: #2a2623;
+  --bs-tertiary-bg: #24211f;
+  --bs-border-color: #4a4541;
+  --bs-heading-color: #f1f1f1;
+  --bs-link-color: #8cc965;
+  --bs-link-color-rgb: 140, 201, 101;
+  --bs-link-hover-color: #9bd174;
+  --bs-link-hover-color-rgb: 155, 209, 116; }
+  [data-bs-theme="dark"] body, [data-bs-theme="dark"] h1, [data-bs-theme="dark"] .h1, [data-bs-theme="dark"] h2, [data-bs-theme="dark"] .h2, [data-bs-theme="dark"] h3, [data-bs-theme="dark"] .h3, [data-bs-theme="dark"] p, [data-bs-theme="dark"] input, [data-bs-theme="dark"] strong {
+    color: var(--bs-body-color); }
+  [data-bs-theme="dark"] .form-control,
+  [data-bs-theme="dark"] .form-select {
+    background-color: #2a2623;
+    border-color: #4a4541;
+    color: #f1f1f1; }
+  [data-bs-theme="dark"] .form-control:focus,
+  [data-bs-theme="dark"] .form-select:focus {
+    background-color: #2a2623;
+    border-color: #6db33f;
+    box-shadow: 0 0 0 0.25rem rgba(109, 179, 63, 0.25); }
+  [data-bs-theme="dark"] .btn-primary:hover, [data-bs-theme="dark"] .btn-primary:focus, [data-bs-theme="dark"] .btn-primary:active, [data-bs-theme="dark"] .btn-primary.active {
+    background-color: #443f3b;
+    border-color: #6db33f; }
+  [data-bs-theme="dark"] .help-block {
+    color: #a9adaf; }
+  [data-bs-theme="dark"] .status-help-content-table td {
+    color: #f1f1f1; }
+  [data-bs-theme="dark"] hr {
+    border-top-color: #4a4541; }
+
+.theme-switch {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 12px 20px;
+  min-height: 0;
+  color: #f1f1f1; }
+  .theme-switch .fa {
+    transition: opacity 0.15s; }
+  .theme-switch .form-check-input {
+    float: none;
+    margin: 0;
+    cursor: pointer; }
+    .theme-switch .form-check-input:checked {
+      background-color: #6db33f;
+      border-color: #6db33f; }
+    .theme-switch .form-check-input:focus {
+      border-color: #6db33f;
+      box-shadow: 0 0 0 0.25rem rgba(109, 179, 63, 0.35); }
+
+[data-bs-theme="light"] .theme-switch .fa-moon-o,
+[data-bs-theme="dark"] .theme-switch .fa-sun-o {
+  opacity: 0.5; }
+
+@media (min-width: 992px) {
+  .theme-switch {
+    padding: 0 20px; } }
+
 /*# sourceMappingURL=../../../../../../target/petclinic.css.map */

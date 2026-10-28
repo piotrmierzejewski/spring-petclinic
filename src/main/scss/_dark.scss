@@ -1,0 +1,117 @@
+// Dark theme, activated by data-bs-theme="dark" on <html> (see resources/js/theme.js).
+//
+// Colours are derived from the Spring palette used by the light theme: warm,
+// brown-tinted near-blacks for surfaces instead of Bootstrap's blue-grey, the light
+// theme's light grey for text, and a lightened Spring green for links.
+// WCAG contrast against $dark-bg: text 15.4:1, muted text 7.7:1, links 8.8:1.
+
+$dark-bg:           #1c1a18;
+$dark-surface:      #2a2623;
+$dark-surface-alt:  #24211f;
+$dark-border:       #4a4541;
+$dark-text:         $spring-light-grey;
+$dark-text-muted:   #a9adaf;
+$dark-link:         #8cc965;
+$dark-link-hover:   #9bd174;
+
+[data-bs-theme="dark"] {
+  --bs-body-bg: #{$dark-bg};
+  --bs-body-bg-rgb: 28, 26, 24;
+  --bs-body-color: #{$dark-text};
+  --bs-body-color-rgb: 241, 241, 241;
+  --bs-emphasis-color: #fff;
+  --bs-emphasis-color-rgb: 255, 255, 255;
+  --bs-secondary-color: #{$dark-text-muted};
+  --bs-secondary-bg: #{$dark-surface};
+  --bs-tertiary-bg: #{$dark-surface-alt};
+  --bs-border-color: #{$dark-border};
+  --bs-heading-color: #{$dark-text};
+  --bs-link-color: #{$dark-link};
+  --bs-link-color-rgb: 140, 201, 101;
+  --bs-link-hover-color: #{$dark-link-hover};
+  --bs-link-hover-color-rgb: 155, 209, 116;
+
+  // typography.scss hard-codes the brown text colour
+  body, h1, h2, h3, p, input, strong {
+    color: var(--bs-body-color);
+  }
+
+  .form-control,
+  .form-select {
+    background-color: $dark-surface;
+    border-color: $dark-border;
+    color: $dark-text;
+  }
+
+  .form-control:focus,
+  .form-select:focus {
+    background-color: $dark-surface;
+    border-color: $spring-green;
+    box-shadow: 0 0 0 0.25rem rgba($spring-green, 0.25);
+  }
+
+  .btn-primary {
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+      background-color: lighten($spring-brown, 6%);
+      border-color: $spring-green;
+    }
+  }
+
+  .help-block {
+    color: $dark-text-muted;
+  }
+
+  .status-help-content-table td {
+    color: $dark-text;
+  }
+
+  hr {
+    border-top-color: $dark-border;
+  }
+}
+
+// Header light/dark switch. The navbar is dark in both themes, so this is styled once.
+.theme-switch {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 12px 20px;
+  min-height: 0;
+  color: $spring-light-grey;
+
+  .fa {
+    transition: opacity 0.15s;
+  }
+
+  .form-check-input {
+    float: none;
+    margin: 0;
+    cursor: pointer;
+
+    &:checked {
+      background-color: $spring-green;
+      border-color: $spring-green;
+    }
+
+    &:focus {
+      border-color: $spring-green;
+      box-shadow: 0 0 0 0.25rem rgba($spring-green, 0.35);
+    }
+  }
+}
+
+// Dim the icon for the theme that is not active.
+[data-bs-theme="light"] .theme-switch .fa-moon-o,
+[data-bs-theme="dark"] .theme-switch .fa-sun-o {
+  opacity: 0.5;
+}
+
+@media (min-width: 992px) {
+  .theme-switch {
+    padding: 0 20px;
+  }
+}
