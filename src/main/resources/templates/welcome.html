@@ -7,7 +7,50 @@
   <h2 th:text="#{welcome}">Welcome</h2>
   <div class="row">
     <div class="col-md-12">
-      <img class="img-responsive" src="../static/resources/images/pets.png" th:src="@{/resources/images/pets.png}" />
+      <div id="petGallery" class="carousel slide pet-gallery" data-bs-ride="carousel" data-bs-interval="4000">
+
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#petGallery" data-bs-slide-to="0" class="active" aria-current="true"
+            th:attr="aria-label=#{galleryKitten}"></button>
+          <button type="button" data-bs-target="#petGallery" data-bs-slide-to="1" th:attr="aria-label=#{galleryPuppy}"></button>
+          <button type="button" data-bs-target="#petGallery" data-bs-slide-to="2" th:attr="aria-label=#{galleryRabbit}"></button>
+          <button type="button" data-bs-target="#petGallery" data-bs-slide-to="3" th:attr="aria-label=#{galleryGuineaPig}"></button>
+          <button type="button" data-bs-target="#petGallery" data-bs-slide-to="4" th:attr="aria-label=#{galleryHamster}"></button>
+        </div>
+
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img th:src="@{/resources/images/gallery/kitten.jpg}" th:alt="#{galleryKitten}" />
+            <div class="carousel-caption"><p class="mb-0" th:text="#{galleryKitten}">A sleepy kitten</p></div>
+          </div>
+          <div class="carousel-item">
+            <img th:src="@{/resources/images/gallery/puppy.jpg}" th:alt="#{galleryPuppy}" />
+            <div class="carousel-caption"><p class="mb-0" th:text="#{galleryPuppy}">A happy golden retriever puppy</p></div>
+          </div>
+          <div class="carousel-item">
+            <img th:src="@{/resources/images/gallery/rabbit.jpg}" th:alt="#{galleryRabbit}" />
+            <div class="carousel-caption"><p class="mb-0" th:text="#{galleryRabbit}">A fluffy pet rabbit</p></div>
+          </div>
+          <div class="carousel-item">
+            <img th:src="@{/resources/images/gallery/guinea-pig.jpg}" th:alt="#{galleryGuineaPig}" />
+            <div class="carousel-caption"><p class="mb-0" th:text="#{galleryGuineaPig}">A guinea pig enjoying a snack</p></div>
+          </div>
+          <div class="carousel-item">
+            <img th:src="@{/resources/images/gallery/hamster.jpg}" th:alt="#{galleryHamster}" />
+            <div class="carousel-caption"><p class="mb-0" th:text="#{galleryHamster}">A curious hamster</p></div>
+          </div>
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#petGallery" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden" th:text="#{galleryPrevious}">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#petGallery" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden" th:text="#{galleryNext}">Next</span>
+        </button>
+
+      </div>
     </div>
   </div>
 
